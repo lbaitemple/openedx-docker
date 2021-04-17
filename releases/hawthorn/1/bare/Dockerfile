@@ -40,12 +40,12 @@ RUN apt-get update && \
     apt-get install -y curl
 
 # Download pip installer for python 2.7
-RUN curl -sLo get-pip.py https://bootstrap.pypa.io/2.7/get-pip.py
+RUN curl -sLo get-pip.py https://bootstrap.pypa.io/pip/2.7/get-pip.py
 
 # Download edxapp release
 # Get default EDX_RELEASE_REF value (defined on top)
 ARG EDX_RELEASE_REF
-RUN curl -sLo edxapp.tgz  https://github.com/lbaitemple/openedx-docker/raw/master/$EDX_RELEASE_REF.tar.gz  && \
+RUN curl -sLo edxapp.tgz  https://github.com/lbaitemple/openedx-docker/raw/master/edx-platform-open-release-hawthorn.1.tar.gz  && \
     tar xzf edxapp.tgz
 
 
